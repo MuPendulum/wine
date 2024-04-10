@@ -489,7 +489,6 @@ HKL WINAPI LoadKeyboardLayoutA(LPCSTR pwszKLID, UINT Flags)
     return ret;
 }
 
-
 /***********************************************************************
  *		UnloadKeyboardLayout (USER32.@)
  */

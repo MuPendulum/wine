@@ -4774,7 +4774,11 @@ HRESULT create_font_collection(IDWriteFactory7 *factory, IDWriteFontFileEnumerat
             }
         }
 
-        IDWriteFontFileStream_Release(stream);
+        const char *sgi = getenv("SteamGameId");
+
+        if ((!sgi) | (sgi && strcmp(sgi, "244210"))) {
+            IDWriteFontFileStream_Release(stream);
+        }
     }
 
     LIST_FOR_EACH_ENTRY_SAFE(fileenum, fileenum2, &scannedfiles, struct fontfile_enum, entry)
